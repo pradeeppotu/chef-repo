@@ -382,7 +382,7 @@ calculate the SHA256 checksum to use in the suite.
 License and Author
 -----
 
-* Author: Seth Chisamore (<pradeep.potu@harman.com>)
+* Author: Pradeep Potu (<pradeep.potu@harman.com>)
 
 Copyright: 2014, Agile Orbit, LLC
 
