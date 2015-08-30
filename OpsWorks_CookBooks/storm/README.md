@@ -1,13 +1,12 @@
 # Storm Chef Cookbook
 
-This cookbook has been forked from [hmalphettes/storm-project-cookbook](https://github.com/hmalphettes/storm-project-cookbook) and a first pass of modifications have been made to support any Storm version
-(0.9.1-incubating by default), added recipe for a single node cluster deployment, a recipe for a UI node
+(0.9.4 by default), added recipe for a single node cluster deployment, a recipe for a UI node
 and added/cleaned some options. I am using this cookbook with Chef Solo and Vagrant.
 Lots of modifications are still required to put this cookbook in better shape.
 
 This cookbook will install the following:
 - Zookeeper, current Ubuntu package
-- Storm 0.9.1-incubating by default but configurable
+- Storm 0.9.4 by default but configurable
 
 # Requirement
 
@@ -27,7 +26,7 @@ The `storm::singlenode` recipe installs nimbus, supervisor, drpc and ui on the s
 # Default options
 
 ```
-default[:storm][:version] = "0.9.1-incubating"
+default[:storm][:version] = "0.9.4"
 
 default[:storm][:deploy][:user] = ::File.exists?("/home/vagrant") ? "vagrant" : "ec2-user"
 default[:storm][:deploy][:group] = ::File.exists?("/home/vagrant") ? "vagrant" : "ec2-user"

@@ -1,7 +1,7 @@
 ########### These MUST be filled in for a storm configuration
 storm.zookeeper.servers:
-<% node[:storm][:supervisor][:hosts].each do |host| %>
-- "<%= host %>"
+<% node[:opsworks][:layers][:sunjava][:instances].each do |instance_name, instance_data| %>
+- "<%= instance_data['private_ip'] %>"
 <% end %>
 
 storm.local.dir: "/home/<%= node[:storm][:deploy][:user] %>/storm-data"

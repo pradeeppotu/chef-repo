@@ -2,17 +2,9 @@
 # Cookbook Name:: storm-project
 # Recipe:: default
 #
-# Copyright 2012, YOUR_COMPANY_NAME
 #
-# All rights reserved - Do Not Redistribute
 #
 
-#%w[ curl unzip build-essential pkg-config libtool autoconf git-core uuid-dev python-dev zookeeper ].each do |pkg|
-#    package pkg do
-#        retries 2
-#        action :install
-#    end
-#end
 
 #bash "Setup zookeeper as a daemon" do
 #  code <<-EOH
