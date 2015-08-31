@@ -1,6 +1,6 @@
 ########### These MUST be filled in for a storm configuration
 storm.zookeeper.servers:
-<% node[:opsworks][:layers][:sunjava][:instances].each do |instance_name, instance_data| %>
+<% node[:opsworks][:layers][:zookeeper][:instances].each do |instance_name, instance_data| %>
 - "<%= instance_data['private_ip'] %>"
 <% end %>
 
