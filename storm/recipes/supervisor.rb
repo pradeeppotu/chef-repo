@@ -8,6 +8,14 @@ template "Storm conf file" do
   mode 0644
 end
 
+template "Supervisord Storm conf file" do
+  path "/etc/supervisord.conf"
+  source "supervisord.conf"
+  owner node[:storm][:deploy][:user]
+  group node[:storm][:deploy][:group]
+  mode 0644
+end
+
 bash "Start supervisor" do
   user node[:storm][:deploy][:user]
   cwd "/home/#{node[:storm][:deploy][:user]}"
@@ -15,6 +23,9 @@ bash "Start supervisor" do
   pid=$(pgrep -f backtype.storm.daemon.supervisor)
   if [ -z $pid ]; then
     nohup apache-storm-#{node[:storm][:version]}/bin/storm supervisor >>supervisor.log 2>&1 &
+	sudo easy_install supervisor
+	supervisord -c /etc/supervisord.conf
   fi
   EOH
 end
+
