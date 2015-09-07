@@ -4,5 +4,6 @@ storm.zookeeper.servers:
 - "<%= instance_data['private_ip'] %>"
 <% end %>
 
+
 storm.local.dir: "/home/<%= node[:storm][:deploy][:user] %>/storm-data"
 java.library.path: "/usr/local/lib"

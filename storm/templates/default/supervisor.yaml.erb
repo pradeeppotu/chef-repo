@@ -11,6 +11,7 @@ nimbus.host: <% node[:opsworks][:layers][:nimbus][:instances].each do |instance_
  "<%= instance_data['private_ip'] %>"
 <% end %>
 
+
 worker.childopts: "<%= node[:storm][:worker][:childopts] %>"
 supervisor.childopts: "<%= node[:storm][:supervisor][:childopts] %>"
 supervisor.slots.ports:
