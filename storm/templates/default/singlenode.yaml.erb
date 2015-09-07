@@ -9,7 +9,7 @@ java.library.path: "/usr/local/lib"
 
 topology.debug: true
 
-nimbus.host: "<%= node[:storm][:nimbus][:host] %>"
+nimbus.host: "127.0.0.1"
 nimbus.task.launch.secs : 240
 nimbus.childopts: "<%= node[:storm][:nimbus][:childopts] %>"
 ui.childopts: "<%= node[:storm][:ui][:childopts] %>"

@@ -7,7 +7,9 @@ storm.zookeeper.servers:
 storm.local.dir: "/home/<%= node[:storm][:deploy][:user] %>/storm-data"
 java.library.path: "/usr/local/lib"
 
-nimbus.host: "<%= node[:storm][:nimbus][:host] %>"
+nimbus.host: <% node[:opsworks][:layers][:nimbus][:instances].each do |instance_name, instance_data| %>
+ "<%= instance_data['private_ip'] %>"
+<% end %>
 
 worker.childopts: "<%= node[:storm][:worker][:childopts] %>"
 supervisor.childopts: "<%= node[:storm][:supervisor][:childopts] %>"
